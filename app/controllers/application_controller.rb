@@ -54,7 +54,13 @@ class ApplicationController < Sinatra::Base
     stretch.to_json
   end
 
-  
+  patch '/muscle_groups/:id' do
+    muscle_group = MuscleGroup.find(params[:id])
+    muscle_group.update(
+      image_url: params[:image_url]
+    )
+    muscle_group.to_json
+  end
 
   patch '/exercises/:id' do
     exercise = Exercise.find(params[:id])
