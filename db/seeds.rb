@@ -39,13 +39,15 @@ muscle_group_id: muscle_group.id)
 ## STRETCHES
 # CHEST
 Stretch.create(name: "Chest Wall Stretch" image_url "https://s3assets.skimble.com/assets/3904/skimble-workout-trainer-exercise-chest-stretch-pectoralis-2_iphone.jpg" 
-how_to_do: "Stand with one arm flush against the wall and lean away toward the opposite shoulder until you feel a good stretch.")
+how_to_do: "Stand with one arm flush against the wall and lean away toward the opposite shoulder until you feel a good stretch."
+muscle_group_id: muscle_group.id)
 Stretch.create(name: "Chest Extension Stretch" image_url "https://insyncphysio.com/wp-content/uploads/2018/10/Behind-Back-Neck-Stretch.jpg" 
-how_to_do: "Grab both hands behind your back and lift upward as far as you can to feel a good stretch.")
+how_to_do: "Grab both hands behind your back and lift upward as far as you can to feel a good stretch."
+muscle_group_id: muscle_group.id)
 
 # BACK
-Stretch.create(name: "" image_url "" how_to_do: "")
-Stretch.create(name: "" image_url "" how_to_do: "")
+Stretch.create(name: "" image_url "" how_to_do: "" muscle_group_id: muscle_group.id)
+Stretch.create(name: "" image_url "" how_to_do: "" muscle_group_id: muscle_group.id)
 
 # LEGS
 Stretch.create(name: "" image_url "" how_to_do: "")
