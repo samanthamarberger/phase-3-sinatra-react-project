@@ -1,7 +1,7 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
+  # GET ROUTES
   get '/' do
     "Hello World"
   end
@@ -26,6 +26,7 @@ class ApplicationController < Sinatra::Base
     stretches.to_json
   end
 
+  #POST 
   post '/muscle_groups' do
     muscle_group = MuscleGroup.create(
       name: params[:name],
@@ -54,6 +55,7 @@ class ApplicationController < Sinatra::Base
     stretch.to_json
   end
 
+  #PATCH
   patch '/muscle_groups/:id' do
     muscle_group = MuscleGroup.find(params[:id])
     muscle_group.update(
@@ -77,6 +79,25 @@ class ApplicationController < Sinatra::Base
       image_url: params[:image_url] || stretch.image_url,
       how_to_do: params[:how_to_do] || stretch.how_to_do
     )
+    stretch.to_json
+  end
+
+  #DELETE
+  delete '/muscle_groups/:id' do
+    muscle_group = MuscleGroup.find(params[:id])
+    muscle_group.destroy 
+    muscle_group.to_json
+  end
+
+  delete '/exercises/:id' do
+    exercise = Exercise.find(params[:id])
+    exercise.destroy
+    exercise.to_json
+  end
+
+  delete '/stretches/:id' do
+    stretch = Stretch.find(params[:id])
+    stretch.destroy
     stretch.to_json
   end
 
