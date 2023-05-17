@@ -54,4 +54,24 @@ class ApplicationController < Sinatra::Base
     stretch.to_json
   end
 
+  
+
+  patch '/exercises/:id' do
+    exercise = Exercise.find(params[:id])
+    exercise.update(
+      image_url: params[:image_url] || exercise.image_url,
+      how_to_do: params[:how_to_do] || exercise.how_to_do
+    )
+    exercise.to_json
+  end
+
+  patch '/stretches/:id' do
+    stretch = Stretch.find(params[:id])
+    stretch.update(
+      image_url: params[:image_url] || stretch.image_url,
+      how_to_do: params[:how_to_do] || stretch.how_to_do
+    )
+    stretch.to_json
+  end
+
 end
