@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
 
   get '/muscle_groups/:id' do
     muscle_group = MuscleGroup.find(params[:id])
-    muscle_group.to_json
+    muscle_group.to_json(include: :exercises)
   end
 
   get '/exercises' do
