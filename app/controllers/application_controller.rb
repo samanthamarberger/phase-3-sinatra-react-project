@@ -6,16 +6,22 @@ class ApplicationController < Sinatra::Base
     "Hello World"
   end
 
+  #Muscle Group Index route
   get '/muscle_groups' do
     muscle_groups = MuscleGroup.all 
-    muscle_groups.to_json
+    muscle_groups.to_json(include: :exercises)
   end
 
+  #Muscle Group show route
   get '/muscle_groups/:id' do
-    muscle_group = MuscleGroup.find(params[:id])
-    muscle_group.to_json(include: :exercises)
+    muscle_group = MuscleGroup.find_by(id: params[:id])
+    muscle_group.to_json(include: :exercises) # maybe??
   end
 
+  # change to make dynamic through MG 
+  # get'/muscle_groups/:mid/exercises/:eid do
+  #   exercise = MuscleGroup.find(params[:mid]).Exercise.find(params[:eid])
+  #   exercise.to_json
   get '/exercises' do
     exercises = Exercise.all
     exercises.to_json
@@ -57,7 +63,7 @@ class ApplicationController < Sinatra::Base
 
   #PATCH
   patch '/muscle_groups/:id' do
-    muscle_group = MuscleGroup.find(params[:id])
+    muscle_group = MuscleGroup.find_by(id: params[:id])
     muscle_group.update(
       image_url: params[:image_url]
     )
@@ -84,7 +90,7 @@ class ApplicationController < Sinatra::Base
 
   #DELETE
   delete '/muscle_groups/:id' do
-    muscle_group = MuscleGroup.find(params[:id])
+    muscle_group = MuscleGroup.find(params[:mid])
     muscle_group.destroy 
     muscle_group.to_json
   end
