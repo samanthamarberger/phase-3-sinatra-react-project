@@ -15,7 +15,10 @@ class ApplicationController < Sinatra::Base
   #Muscle Group show route
   get '/muscle_groups/:id' do
     muscle_group = MuscleGroup.find_by(id: params[:id])
-    muscle_group.to_json(include: :exercises) # maybe??
+    if muscle_group
+      muscle_group.to_json(include: :exercises) 
+    else
+      "404 - Muscle Group not found"
   end
 
   # change to make dynamic through MG 
