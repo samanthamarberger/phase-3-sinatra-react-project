@@ -19,6 +19,7 @@ class ApplicationController < Sinatra::Base
       muscle_group.to_json(include: :exercises) 
     else
       "404 - Muscle Group not found"
+    end
   end
 
   # change to make dynamic through MG 
