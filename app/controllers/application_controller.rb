@@ -22,10 +22,6 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  # change to make dynamic through MG 
-  # get'/muscle_groups/:mid/exercises/:eid do
-  #   exercise = MuscleGroup.find(params[:mid]).Exercise.find(params[:eid])
-  #   exercise.to_json
   get '/exercises' do
     exercises = Exercise.all
     exercises.to_json
@@ -77,7 +73,6 @@ class ApplicationController < Sinatra::Base
   patch '/exercises/:id' do
     exercise = Exercise.find(params[:id])
     exercise.update(
-      image_url: params[:image_url] || exercise.image_url,
       how_to_do: params[:how_to_do] || exercise.how_to_do
     )
     exercise.to_json
