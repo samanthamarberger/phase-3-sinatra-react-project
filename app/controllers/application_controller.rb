@@ -89,7 +89,7 @@ class ApplicationController < Sinatra::Base
 
   #DELETE
   delete '/muscle_groups/:id' do
-    muscle_group = MuscleGroup.find(params[:mid])
+    muscle_group = MuscleGroup.find_by(id: params[:id])
     muscle_group.destroy 
     muscle_group.to_json
   end
