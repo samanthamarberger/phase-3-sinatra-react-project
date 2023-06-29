@@ -11,8 +11,12 @@ Hello we developers! Welcome to "Your body, Your Workouts" web application. This
 * Start up your server by running 
      ```bash
       bundle exec rake server 
+* You will be able to find the server at 
+      ```bash
+      http://localhost:9292/muscle_groups
       ```
-* 
+
+
 
 
 
