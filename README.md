@@ -4,7 +4,7 @@
 
 Hello we developers! Welcome to "Your body, Your Workouts" web application. This is a single page web application that I built using REACT js for the front end, and Sinatra for my server. This single page application allows its user to view various workouts depending upon the muscle group they want to target. The user can add muscle groups, and add, delete, or edit workouts.
 
-### Instructions ###
+### Setup Instructions ###
 
 * Fork and clone this repository
 * Run bundle install to install the necessary gems
@@ -12,15 +12,15 @@ Hello we developers! Welcome to "Your body, Your Workouts" web application. This
      ```bash
       bundle exec rake server 
 * You will be able to find the server at 
-      ```
       http://localhost:9292/muscle_groups
   
 * Open the [Frontend Repository] (https://github.com/samanthamarberger/my-final-phase-3-frontend-project)
 * Fork and clone the frontend repository 
 * In terminal run 
     ``` npm install
-    ``` npm install react-router-dom
-    ``` npm start
+        npm install react-router-dom
+        npm start
+    ```
 * Browse the web application! 
 
 
