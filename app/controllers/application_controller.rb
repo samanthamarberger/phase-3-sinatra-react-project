@@ -1,10 +1,5 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
-  
-  # GET ROUTES
-  get '/' do
-    "Hello World"
-  end
 
   #Muscle Group Index route
   get '/muscle_groups' do
@@ -62,13 +57,6 @@ class ApplicationController < Sinatra::Base
   end
 
   #PATCH
-  patch '/muscle_groups/:id' do
-    muscle_group = MuscleGroup.find_by(id: params[:id])
-    muscle_group.update(
-      image_url: params[:image_url]
-    )
-    muscle_group.to_json
-  end
 
   patch '/exercises/:id' do
     exercise = Exercise.find(params[:id])
@@ -81,7 +69,6 @@ class ApplicationController < Sinatra::Base
   patch '/stretches/:id' do
     stretch = Stretch.find(params[:id])
     stretch.update(
-      image_url: params[:image_url] || stretch.image_url,
       how_to_do: params[:how_to_do] || stretch.how_to_do
     )
     stretch.to_json

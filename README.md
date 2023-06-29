@@ -1,3 +1,23 @@
+# Project 3: Your Body, Your Workouts #
+
+### Description ###
+
+Hello we developers! Welcome to "Your body, Your Workouts" web application. This is a single page web application that I built using REACT js for the front end, and Sinatra for my server. This single page application allows its user to view various workouts depending upon the muscle group they want to target. The user can add muscle groups, and add, delete, or edit workouts.
+
+### Instructions ###
+
+* Fork and clone this repository
+* Run bundle install to install the necessary gems
+* Start up your server by running 
+     ```bash
+      bundle exec rake server 
+      ```
+* 
+
+
+
+
+
 # Phase 3 Project Guidelines
 
 ## Learning Goals
