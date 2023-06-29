@@ -12,10 +12,16 @@ Hello we developers! Welcome to "Your body, Your Workouts" web application. This
      ```bash
       bundle exec rake server 
 * You will be able to find the server at 
-      ```bash
-      http://localhost:9292/muscle_groups
       ```
-
+      http://localhost:9292/muscle_groups
+  
+* Open the [Frontend Repository] (https://github.com/samanthamarberger/my-final-phase-3-frontend-project)
+* Fork and clone the frontend repository 
+* In terminal run 
+    ``` npm install
+    ``` npm install react-router-dom
+    ``` npm start
+* Browse the web application! 
 
 
 
