@@ -67,8 +67,8 @@ class ApplicationController < Sinatra::Base
   end
 
   patch '/stretches/:id' do
-    stretch = Stretch.find(params[:id])
-    stretch.update(
+    @stretch = Stretch.find(params[:id])
+    @stretch.update(
       how_to_do: params[:how_to_do] || stretch.how_to_do
     )
     stretch.to_json
@@ -77,7 +77,7 @@ class ApplicationController < Sinatra::Base
   #DELETE
   delete '/muscle_groups/:id' do
     muscle_group = MuscleGroup.find_by(id: params[:id])
-    muscle_group.destroy 
+    @muscle_group.destroy 
     muscle_group.to_json
   end
 
@@ -93,4 +93,19 @@ class ApplicationController < Sinatra::Base
     stretch.to_json
   end
 
+  get '/exercises/:keyword' do
+      exercises = Exercise.all.select do |exercise| 
+        exercise.how_to_do.include?(params[:keyword])
+      end
+      exercises.to_json
+  end
+  
 end
+
+
+
+# Search through the how to dos for the exercises and look for 
+# keyword and then makes an array of those exercises 
+
+
+
